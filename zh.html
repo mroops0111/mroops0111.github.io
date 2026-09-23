@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yun-Tai Yang</title>
-<meta name="description" content="Backend engineer. Six years on APIs and services that other companies build on, and lately on what an AI should be allowed to do with them.">
+<title>楊耘臺</title>
+<meta name="description" content="後端工程師。六年都在做別人會接上來的 API 與服務，近幾年在想的是，AI 應該被允許拿它們做什麼。">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="alternate" hreflang="zh-Hant" href="https://mroops.dev/zh.html">
 <link rel="alternate" hreflang="en" href="https://mroops.dev/">
+<link rel="alternate" hreflang="zh-Hant" href="https://mroops.dev/zh.html">
 <link rel="preload" href="fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 	// Runs before first paint so a pinned theme never flashes the other one.
@@ -20,9 +20,9 @@
 
 	<header class="masthead">
 		<div class="identity">
-			<div class="avatar" role="img" aria-label="Yun-Tai Yang">YY</div>
+			<div class="avatar" role="img" aria-label="楊耘臺">YY</div>
 			<div>
-				<h1 class="name">Yun-Tai Yang</h1>
+				<h1 class="name">楊耘臺 <span class="name-latin">(Yun-Tai Yang)</span></h1>
 				<span class="handle">mroops</span>
 				<nav class="elsewhere">
 					<a href="https://github.com/mroops0111" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></a>
@@ -39,53 +39,48 @@
 					<path d="M8 1a7 7 0 0 1 0 14z" fill="currentColor"/>
 				</svg>
 			</button>
-			<a class="lang" href="zh.html" hreflang="zh-Hant">中文</a>
+			<a class="lang" href="./" hreflang="en">English</a>
 		</div>
 	</header>
 
-	<p class="lede">
-		Backend engineer. Six years on APIs and services that other companies build on,
-		and lately on what an AI should be allowed to do with them.
-	</p>
+	<p class="lede">後端工程師。六年都在做別人會接上來的 API 與服務，近幾年在想的是，AI 應該被允許拿它們做什麼。</p>
 
 	<section class="section">
-		<h2 class="section-label">Work</h2>
+		<h2 class="section-label">作品</h2>
 
 		<div class="section-body">
-			<p class="framing">
-			An agent drafts, a person decides. All three are built so that is the only available path.
-		</p>
+			<p class="framing">agent 草擬，人決定。三個專案都是為了讓這件事成為唯一可走的路。</p>
 
 		<figure class="tree">
 			<p class="tree-name"><a href="https://github.com/mroops0111/openapi-mcp-gateway">openapi-mcp-gateway</a></p>
 			<p class="tree-note">Python &middot; PyPI</p>
-			<p class="tree-role">Turns a REST API into MCP tools an agent can call, then narrows them. Which operations exist at all, what shape they take, and whose credentials they run under, resolved per request rather than fixed per server.</p>
+			<p class="tree-role">把 REST API 變成 agent 叫得動的 MCP 工具，然後把它收窄。哪些 operation 存在、長成什麼形狀、用誰的憑證執行，逐次請求解析，而不是整台伺服器綁死一組。</p>
 
 			<ul class="tree-branch">
 				<li class="tree-item">
-					<p class="tree-verb">built on</p>
+					<p class="tree-verb">建立在它之上</p>
 					<p class="tree-name"><a href="https://github.com/mroops0111/conciergent">conciergent</a></p>
 					<p class="tree-note">Python</p>
-					<p class="tree-role">Gives those tools a chat face. Point it at any MCP server and it becomes a Slack, LINE, or Discord bot that can actually do things, with OAuth handled inside the conversation and a confirm step in front of anything destructive.</p>
+					<p class="tree-role">給那些工具一張聊天的臉。指向任何 MCP server，它就變成一個真的做得了事的 Slack、LINE 或 Discord 機器人，OAuth 在對話裡就完成，破壞性動作前先攔一道確認。</p>
 				</li>
 				<li class="tree-item tree-item--borrowed">
-					<p class="tree-verb">borrows from</p>
+					<p class="tree-verb">借用它的能力</p>
 					<p class="tree-name"><a href="https://github.com/mroops0111/braid">braid</a></p>
 					<p class="tree-note">TypeScript &middot; npm</p>
-					<p class="tree-role">One reviewed model of a domain, braided back together from the code and the intent that drifted apart. Agents draft it from the sources, people decide what lands, and a node that cites nothing is refused. Independent by design, the gateway is a capability it borrows.</p>
+					<p class="tree-role">一份經過審閱的領域模型，把早已各自漂移的程式碼與意圖重新編回一起。agent 從來源草擬，人決定什麼能進去，沒有引用來源的節點一律退回。它在設計上是獨立的，gateway 只是它借來的一項能力。</p>
 
 					<ul class="tree-branch">
 						<li class="tree-item tree-item--pending">
-							<p class="tree-verb">applies the idea</p>
+							<p class="tree-verb">延用它的概念</p>
 							<p class="tree-name">newledge</p>
-							<p class="tree-note">In progress</p>
-							<p class="tree-role">The same review loop turned on learning itself.</p>
+							<p class="tree-note">進行中</p>
+							<p class="tree-role">把同一套審閱迴圈轉向學習本身。</p>
 						</li>
 					</ul>
 				</li>
 			</ul>
 
-			<figcaption class="tree-foot">Solid means a dependency. Dashed means a borrowed capability, braid would still be braid without the gateway.</figcaption>
+			<figcaption class="tree-foot">實線是相依。虛線是借來的能力，braid 沒有 gateway 仍然是 braid。</figcaption>
 		</figure>
 
 
@@ -95,18 +90,14 @@
 	</section>
 
 	<section class="section">
-		<h2 class="section-label">Experience</h2>
+		<h2 class="section-label">經歷</h2>
 
 		<div class="section-body">
 			<div class="role">
 				<p class="role-when">2020 &ndash; 2026</p>
 				<div>
-					<p class="role-where"><a href="https://www.kdan.com/">KDAN</a> &middot; Staff Backend Engineer</p>
-					<p class="role-what">
-						<a href="https://www.dottedsign.com/">DottedSign</a>, an e-signature platform. I owned its public API and the hundred or so
-						enterprise integrations built on it. openapi-mcp-gateway and conciergent began
-						here, as the internal version of the same problem.
-					</p>
+					<p class="role-where"><a href="https://www.kdan.com/">凱鈿</a> &middot; Staff Backend Engineer</p>
+					<p class="role-what">電子簽署平台 <a href="https://www.dottedsign.com/">DottedSign</a>。我負責它的公開 API，以及建立在上面的上百個企業整合。openapi-mcp-gateway 和 conciergent 都是從這裡長出來的，先在內部解過同一個問題。</p>
 				</div>
 			</div>
 
@@ -115,18 +106,14 @@
 
 
 	<section class="section">
-		<h2 class="section-label">Education</h2>
+		<h2 class="section-label">學歷</h2>
 
 		<div class="section-body">
 			<div class="role">
 				<p class="role-when">2016 &ndash; 2020</p>
 				<div>
-					<p class="role-where">National Cheng Kung University</p>
-					<p class="role-what">
-						M.S., Computer and Communication Engineering. First author on
-						<a href="https://doi.org/10.1002/spe.3304"><cite>A noise blocking methodology
-						for effective collaboration</cite></a>, in Software: Practice and Experience.
-					</p>
+					<p class="role-where">國立成功大學</p>
+					<p class="role-what">電腦與通信工程研究所碩士。第一作者論文 <a href="https://doi.org/10.1002/spe.3304"><cite>A noise blocking methodology for effective collaboration</cite></a>，發表於 Software: Practice and Experience。</p>
 				</div>
 			</div>
 		</div>
