@@ -39,9 +39,10 @@
 	--gutter: 11rem;
 	--step: 1.75rem;
 
-	/* The two portraits live here so that pointing them at an external host is a one-line edit. */
-	--avatar: url(avatar.jpg);
-	--avatar-alt: url(avatar-ai.jpg);
+	/* Hosted on R2 rather than committed, so a portrait can be replaced or withdrawn without
+	   rewriting this repository's history. Both fail to a monogram, so a 404 here is survivable. */
+	--avatar: url(https://cdn.mroops.dev/assets/avatar.jpg);
+	--avatar-alt: url(https://cdn.mroops.dev/assets/avatar-ai.jpg);
 
 	--t-meta: 0.8125rem;
 	--t-small: 0.9844rem;
@@ -132,18 +133,17 @@ a:hover {
 	min-width: 0;
 }
 
-/* The monogram is the element, and the photograph is a background laid over it. A missing or
-   still-loading avatar.jpg therefore degrades to something deliberate rather than to a broken icon. */
+/* Both portraits are absolutely positioned layers, so the monogram underneath them only ever
+   shows when neither image loads. Putting a portrait in `background-image` instead would paint it
+   behind the text, and the letters would sit on the face. */
 .avatar {
+	position: relative;
 	flex-shrink: 0;
 	width: 4.5rem;
 	height: 4.5rem;
+	overflow: hidden;
 	border-radius: 50%;
-	position: relative;
 	background-color: var(--paper-sunk);
-	background-image: var(--avatar);
-	background-size: cover;
-	background-position: center;
 	box-shadow: inset 0 0 0 1px var(--rule);
 	font-family: 'Source Serif 4', serif;
 	font-size: 1.375rem;
@@ -153,14 +153,21 @@ a:hover {
 	color: var(--ink-soft);
 }
 
+.avatar::before,
 .avatar::after {
 	content: '';
 	position: absolute;
 	inset: 0;
-	border-radius: inherit;
-	background-image: var(--avatar-alt);
 	background-size: cover;
 	background-position: center;
+}
+
+.avatar::before {
+	background-image: var(--avatar);
+}
+
+.avatar::after {
+	background-image: var(--avatar-alt);
 	animation: portrait 9s ease-in-out infinite;
 }
 
