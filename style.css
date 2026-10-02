@@ -47,7 +47,7 @@
 	--t-meta: 0.8125rem;
 	--t-small: 0.9844rem;
 	--t-body: 1.1875rem;
-	--t-title: 1.75rem;
+	--t-title: 1.4375rem;
 	--t-name: 2.125rem;
 
 	color-scheme: light dark;
@@ -248,24 +248,48 @@ a:hover {
 	color: var(--accent);
 }
 
-/* The framing paragraph carries the relationship between the three entries below it, so it sits
-   apart from the lede rather than inside the list, where it would read as a fourth project. */
-.framing {
-	margin: 0 0 2.1rem;
-	font-size: var(--t-small);
-	line-height: 1.75;
-	color: var(--ink-soft);
-	text-wrap: pretty;
-}
-
 .lede {
-	margin: 0 0 calc(var(--step) * 1.15);
+	margin: 0 0 0.9rem;
 	font-size: var(--t-title);
 	font-weight: 320;
 	line-height: 1.4;
 	letter-spacing: -0.012em;
 	color: var(--ink);
 	text-wrap: pretty;
+}
+
+/* Two lines rather than a paragraph, one per field, so the lede stays a single claim and the
+   evidence for it can be scanned. The labels share the section labels' sans so they read as
+   interface rather than as text. */
+.focus {
+	margin: 0 0 calc(var(--step) * 1.15);
+	padding: 0;
+	list-style: none;
+	font-size: var(--t-small);
+	line-height: 1.75;
+	color: var(--ink-soft);
+}
+
+.focus li {
+	display: grid;
+	grid-template-columns: 6.5rem minmax(0, 1fr);
+	gap: 0 1rem;
+}
+
+.focus-label {
+	padding-top: 0.2rem;
+	font-family: system-ui, -apple-system, sans-serif;
+	font-size: var(--t-meta);
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	color: var(--ink-soft);
+}
+
+@media (max-width: 52rem) {
+	.focus li {
+		grid-template-columns: 1fr;
+		margin-bottom: 0.5rem;
+	}
 }
 
 .section {
@@ -365,8 +389,6 @@ a:hover {
 	background: var(--ink-soft);
 }
 
-/* The trunk is always solid, because it is structure. Only this crossbar carries the relationship,
-   so the two jobs never compete for the same line. */
 .tree-item::before {
 	content: '';
 	position: absolute;
@@ -374,10 +396,6 @@ a:hover {
 	left: 0;
 	width: 2.5rem;
 	border-top: 1px solid var(--ink-soft);
-}
-
-.tree-item--borrowed::before {
-	border-top-style: dashed;
 }
 
 .tree-verb {
@@ -395,25 +413,12 @@ a:hover {
 	letter-spacing: -0.006em;
 }
 
-.tree-item--pending .tree-name {
-	color: var(--accent);
-}
-
 .tree-role {
 	margin: 0;
 	font-size: var(--t-small);
 	line-height: 1.65;
 	color: var(--ink-soft);
 	text-wrap: pretty;
-}
-
-.tree-foot {
-	margin: 1.9rem 0 0;
-	padding-top: 1.1rem;
-	border-top: 1px solid var(--rule);
-	font-size: var(--t-meta);
-	line-height: 1.6;
-	color: var(--ink-soft);
 }
 
 /* A role is a date, a place and a claim, so it is set as three parts rather than as a paragraph.
@@ -449,6 +454,23 @@ a:hover {
 	line-height: 1.65;
 	color: var(--ink-soft);
 	text-wrap: pretty;
+}
+
+.role-points {
+	margin: 0.35rem 0 0;
+	padding-left: 1.1rem;
+	font-size: var(--t-small);
+	line-height: 1.65;
+	color: var(--ink-soft);
+	text-wrap: pretty;
+}
+
+.role-points li + li {
+	margin-top: 0.2rem;
+}
+
+.role-points li::marker {
+	color: color-mix(in oklch, var(--ink-soft) 55%, transparent);
 }
 
 @media (max-width: 52rem) {

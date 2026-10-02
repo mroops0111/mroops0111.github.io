@@ -59,7 +59,7 @@ longer lines.
 - **Two Columns**: section labels sit in a left gutter, content runs in the right column
 - **One Column below 52rem**: the gutter has nowhere to go at that width, so labels move above their
   sections and the side padding returns
-- **Diagram in Markup**: the relationship between the three projects is drawn in HTML and CSS, so it
+- **Diagram in Markup**: the relationship between the projects is drawn in HTML and CSS, so it
   inherits the type, follows the theme and reflows on a phone
 
 ## Motion
@@ -92,7 +92,7 @@ Nothing here is generated, so the repository is the deployed site byte for byte.
 index.html     English
 zh.html        Traditional Chinese
 style.css      tokens and every rule
-favicon.svg    follows the system theme
+favicon.svg    the YT mark shared with the slide decks, follows the system theme
 fonts/         Source Serif 4, latin and latin-ext subsets
 CNAME          mroops.dev
 ```
@@ -110,8 +110,9 @@ hard reload with `Cmd+Shift+R` before it shows.
 
 ## Deployment
 
-GitHub Pages serves `master` at the repository root, and a push is the whole deployment.
+GitHub Pages serves `master` at the repository root, so merging a pull request is the whole deployment.
 
 - **Custom Domain**: `CNAME` holds `mroops.dev`, and `mroops0111.github.io` redirects to it
 - **HTTPS Is Mandatory**: `.dev` sits in the HSTS preload list, so Enforce HTTPS has to stay on
 - **Cloudflare Proxy Stays Off**: the orange cloud blocks GitHub's certificate validation
+- **Protected `master`**: changes land through a pull request, and force pushes and deletion are blocked
